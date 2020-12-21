@@ -5,12 +5,7 @@ let OrbitControls = require("three-orbit-controls")(THREE);
 import fragment from './shader/fragment.glsl';
 import vertex from './shader/vertex.glsl';
 import * as dat from 'dat.gui';
-import gsap from 'gsap';
-
-import about from '../img/about.jpg';
-import contact from '../img/contact.jpeg';
-import blog from '../img/blog.jpg';
-import home from '../img/home.jpg';
+// import gsap from 'gsap';
 
 export default class Sketch {
   constructor(options) {
@@ -18,7 +13,9 @@ export default class Sketch {
     this.container = options.dom;
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true
+    });
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1);
@@ -109,8 +106,9 @@ export default class Sketch {
       uniforms: {
         time: { value: 0 },
         progress: { value: 0 },
-        t1: { value: new THREE.TextureLoader().load(about) },
-        t2: { value: new THREE.TextureLoader().load(blog) },
+        texture1: { value: null },
+        // t1: { value: new THREE.TextureLoader().load(texture1) },
+        // t2: { value: new THREE.TextureLoader().load(blog) },
         resolution: { value: new THREE.Vector4() },
       },
       // wireframe: true,
