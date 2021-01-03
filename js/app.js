@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-let OrbitControls = require("three-orbit-controls")(THREE);
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 // import { GLTFLoader } from 'js/GLTFLoader.js';
 
 import fragment from './shader/fragment.glsl';
