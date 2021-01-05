@@ -110,6 +110,7 @@ export default class Sketch {
         // t1: { value: new THREE.TextureLoader().load(texture1) },
         // t2: { value: new THREE.TextureLoader().load(blog) },
         resolution: { value: new THREE.Vector4() },
+        uvRate1: { value: new THREE.Vector2(1, 1) },
       },
       // wireframe: true,
       // transparent: true,
