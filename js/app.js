@@ -16,7 +16,8 @@ export default class Sketch {
     this.renderer = new THREE.WebGLRenderer({
       antialias: true
     });
-    this.renderer.setPixelRatio(window.devicePixelRatio);
+    // this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1);
     this.renderer.physicallyCorrectLights = true;
@@ -96,8 +97,6 @@ export default class Sketch {
   }
 
   addObjects() {
-    let that = this;
-    
     this.material = new THREE.ShaderMaterial({
       extensions: {
         derivatives: "#extension GL_OES_standard_derivatives : enable"

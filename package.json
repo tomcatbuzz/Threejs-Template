@@ -4,7 +4,8 @@
   "description": "ThreeJS template",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "Anthony Buzzelli",
   "license": "MIT",
@@ -18,5 +19,10 @@
   "devDependencies": {
     "glslify-bundle": "^5.1.1",
     "glslify-deps": "^1.3.2"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
 }
