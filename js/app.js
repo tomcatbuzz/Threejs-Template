@@ -16,15 +16,12 @@ export default class Sketch {
     this.renderer = new THREE.WebGLRenderer({
       antialias: true
     });
-    // this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1);
     this.renderer.physicallyCorrectLights = true;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     
-    // not sure if needed here
-    // this.container = document.getElementById("container");
     this.container.appendChild(this.renderer.domElement);
 
     this.camera = new THREE.PerspectiveCamera(
@@ -34,11 +31,11 @@ export default class Sketch {
       1000
     );
 
-    let frustumSize = 1;
-    let aspect = window.innerWidth / window.innerHeight;
-    this.camera = new THREE.OrthographicCamera(
-      frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000
-    );
+    // let frustumSize = 1;
+    // let aspect = window.innerWidth / window.innerHeight;
+    // this.camera = new THREE.OrthographicCamera(
+    //   frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000
+    // );
     this.camera.position.set(0, 0, 2);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.time = 0;
